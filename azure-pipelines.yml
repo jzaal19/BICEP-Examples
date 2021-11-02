@@ -1,5 +1,5 @@
 trigger:
-- Development
+- main
 
 name: Deploy Bicep files
 
