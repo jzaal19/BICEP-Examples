@@ -1,7 +1,7 @@
 name: Deploy Bicep files
 
 trigger:
-- main
+- Development
 
 variables:
   azureServiceConnection: 'AzureConnection_huisman-general-d-001'
