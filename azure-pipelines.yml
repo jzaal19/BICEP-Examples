@@ -9,8 +9,7 @@ variables:
   location: 'westeurope'
   templateFile: './main.bicep'
 
-pool:
-  vmImage: MyPool
+pool: MyPool
 
 steps:
 - task: AzureCLI@2
