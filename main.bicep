@@ -1,7 +1,7 @@
 
 @minLength(3)
 @maxLength(24)
-param name string = 'sajzaaltest001'
+param name string = 'sajzaaltest002'
 param language string = resourceGroup().location
 
 @allowed([
