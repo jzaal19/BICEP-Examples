@@ -10,7 +10,7 @@ variables:
   templateFile: './main.bicep'
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: MyPool
 
 steps:
 - task: AzureCLI@2
