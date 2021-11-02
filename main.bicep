@@ -14,7 +14,7 @@ param language string = resourceGroup().location
   'Standard_GZRS'
   'Standard_RAGZRS'
 ])
-param storageSKU string = 'Standard_GRS'
+param storageSKU string = 'Standard_LRS'
 
 var containerName = 'images'
 
