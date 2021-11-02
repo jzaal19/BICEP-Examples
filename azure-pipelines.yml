@@ -10,13 +10,54 @@ variables:
 
 pool: MyPool
 
-steps:
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: '$(azureServiceConnection)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az --version
-      az group create --name $(resourceGroupName) --location $(location)
-      az deployment group create --resource-group $(resourceGroupName) --template-file $(Build.SourcesDirectory)/main.bicep
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    steps:
+
+    - script: echo Hello, world!
+      displayName: 'Run Build steps'
+
+    - task: CopyFiles@2
+      displayName: 'Include templates in the artifact'
+      inputs:
+        Contents: 'main.bicep'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish artifact'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: DEV
+  jobs:
+  - job: Deploy
+    steps:
+
+    - task: DownloadBuildArtifacts@0
+      displayName: 'Download artifact'
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(System.ArtifactsDirectory)'
+    
+    - task: AzureCLI@2
+      displayName: 'Deploy Bicep file'
+      inputs:
+        azureSubscription: '$(azureServiceConnection)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          # Creating a resource group
+          az group create \ 
+            --name $(resourceGroupName) \
+            --location $(location)
+          # Deploying Bicep file
+          az deployment group create \
+            --name $(Build.BuildNumber) \
+            --resource-group $(resourceGroupName) \
+            --template-file $(System.ArtifactsDirectory)/drop/main.bicep
