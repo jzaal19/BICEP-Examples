@@ -1,0 +1,185 @@
+commit 46f5475a0a437083aaabf6396962f6194aaf8fb1
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Wed Nov 3 09:30:00 2021 +0100
+
+    Removed YML pipeline definition
+
+D	azure-pipelines.yml
+
+commit 5326400aa49f44ce091f7c5064b45b4c2088d54b
+Merge: 2357573 b58027e
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Wed Nov 3 09:24:23 2021 +0100
+
+    Merge branch 'main' of https://github.com/jzaal19/BICEP-Examples into main
+
+commit 2357573f43bc6a6f1fa9aca42e850dc9743e871a
+Merge: 16dc55b 5546c57
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 21:18:24 2021 +0100
+
+    Merge branch 'Development' of https://github.com/jzaal19/BICEP-Examples into Development
+
+commit 16dc55bd7435271f50592eecff9098c8cd39c329
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 21:18:13 2021 +0100
+
+    Set storagesku to Standard_LRS
+
+M	main.bicep
+
+commit 5546c573c817f69a590204c80b4a5e5c2a17982d
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 21:14:32 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+    
+    change script type from bash to pscore
+
+M	azure-pipelines.yml
+
+commit 2fdc897aa80768d116230ebf1eac32bea951ff34
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 21:13:14 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+    
+    script type from pscore to bash
+
+M	azure-pipelines.yml
+
+commit 0b3f7b71a9b2f87a67092415db5e282b4f503c25
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 20:59:14 2021 +0100
+
+    Change storagesku
+
+M	main.bicep
+
+commit 286f2c1638467bb6beb1d266d9e2a685b8696994
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 20:50:33 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit b58027e6a1e70156f165f347378c412cdc715d43
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 20:49:43 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit 74e0471f6618bcc9a375bcfb9720ecca2fe81bc4
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 20:47:47 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit a882beb3abee9c114ced53aed860322545b19f03
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 20:47:07 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit b5ea7c017f137132a285fb2ceb42f1f002da8dbd
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 20:44:39 2021 +0100
+
+    Set up CI with Azure Pipelines
+    
+    [skip ci]
+
+M	azure-pipelines.yml
+
+commit c1c8450397c0b11477c2eff81f727f71859da2cc
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 20:08:11 2021 +0100
+
+    Adjust storageaccount name
+
+A	BicepDemos.ps1
+M	main.bicep
+
+commit c4d9412912dcd10e149c0046c0fca0e373805cd7
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 19:48:55 2021 +0100
+
+    Adjust pipeline trigger to development branch
+
+M	azure-pipelines.yml
+
+commit 2675daa0a27c534adda6e3c63ff2baa555f6156c
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 16:20:54 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit 03e9bb13a156fafc45469722a5284a96739bd5e1
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 16:10:11 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit 7c3f24e974ef6f5e5157c4ccc578c50ad7ea381a
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 15:35:53 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit d2eb3c4c78fbb5cd37bdafb61a9417288c163592
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 14:55:29 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+
+M	azure-pipelines.yml
+
+commit 8cea61e12535bda25b7d8184aa26b619d2c7ace4
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 14:44:19 2021 +0100
+
+    Update azure-pipelines.yml for Azure Pipelines
+    
+    Changed Agent Pool
+
+M	azure-pipelines.yml
+
+commit 9f3c907b1f71c918097e788a70ae6910176bde27
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 13:59:10 2021 +0100
+
+    Set up CI with Azure Pipelines
+    
+    [skip ci]
+
+A	azure-pipelines.yml
+
+commit bbff8861dcd2afa62ab38719dfb9fba22e7a55cb
+Author: Jeroen Zaal <jzaal@huisman-nl.com>
+Date:   Tue Nov 2 11:58:06 2021 +0100
+
+    Added BICEP file for deploying new storageaccount
+
+A	main.bicep
+
+commit 809dcd053504ef776633662f73a9bddc5549dab0
+Author: jzaal19 <56150350+jzaal19@users.noreply.github.com>
+Date:   Tue Nov 2 11:23:58 2021 +0100
+
+    Initial commit
+
+A	.gitignore
+A	README.md
