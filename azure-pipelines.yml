@@ -3,10 +3,13 @@ trigger:
 
 name: Deploy Bicep files
 
+name: Deploy Bicep files
+
 variables:
   azureServiceConnection: 'AzureConnection_huisman-general-d-001'
   resourceGroupName: 'rg-weu-jzaal-0451-d-001'
   location: 'westeurope'
+  templateFile: './main.bicep'
 
 pool: MyPool
 
@@ -15,9 +18,17 @@ steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: $(azureServiceConnection)
+<<<<<<< HEAD
     scriptType: pscore
+=======
+    scriptType: bash
+>>>>>>> b58027e6a1e70156f165f347378c412cdc715d43
     scriptLocation: inlineScript
     inlineScript: |
       az --version
       az group create --name $(resourceGroupName) --location $(location)
+<<<<<<< HEAD
       az deployment group create --resource-group $(resourceGroupName) --template-file $(Build.SourcesDirectory)/main.bicep
+=======
+      az deployment group create --resource-group $(resourceGroupName) --template-file $(templateFile)
+>>>>>>> b58027e6a1e70156f165f347378c412cdc715d43
