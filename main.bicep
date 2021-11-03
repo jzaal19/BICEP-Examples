@@ -2,7 +2,7 @@
 @minLength(3)
 @maxLength(24)
 param name string = 'sajzaaltest002'
-param language string = resourceGroup().location
+param location string = resourceGroup().location
 
 @allowed([
   'Standard_LRS'
@@ -20,7 +20,7 @@ var containerName = 'images'
 
 resource sacc 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: name
-  location: language
+  location: location
   sku: {
     name: storageSKU
   }
@@ -29,4 +29,11 @@ resource sacc 'Microsoft.Storage/storageAccounts@2021-06-01' = {
 
 resource sacon 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-06-01' = {
   name: '${sacc.name}/default/${containerName}'
+}
+
+module stg './vnet.bicep' = {
+  name: 'myVNETDeployment'
+  params: {
+    virtualNetworkName: 'vnet-weu-d-development-003'
+  }
 }
