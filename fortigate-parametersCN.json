@@ -1,0 +1,100 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "value": "huismanadm"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "fortiGateNamePrefix": {
+            "value": "nva-fw-sas-d"
+        },
+        "fortiGateImageSKU": {
+            "value": "fortinet_fg-vm"
+        },
+        "fortiGateImageVersion": {
+            "value": "latest"
+        },
+        "fortiGateAditionalCustomData": {
+            "value": ""
+        },
+        "instanceType": {
+            "value": "Standard_F4s"
+        },
+        "acceleratedNetworking": {
+            "value": "true"
+        },
+        "publicIPNewOrExisting": {
+            "value": "new"
+        },
+        "publicIPName": {
+            "value": "pip-nva-fw-sas-d-001"
+        },
+        "publicIPResourceGroup": {
+            "value": "rg-sas-fortigate-0451-d-001"
+        },
+        "vnetNewOrExisting": {
+            "value": "new"
+        },
+        "vnetName": {
+            "value": "vnet-sas-d-fortigate-001"
+        },
+        "vnetResourceGroup": {
+            "value": "rg-sas-network-0451-d-001"
+        },
+        "vnetAddressPrefix": {
+            "value": "10.240.84.0/22"
+        },
+        "subnet1Name": {
+            "value": "snet-vnet-sas-d-external-001"
+        },
+        "subnet1Prefix": {
+            "value": "10.240.84.0/26"
+        },
+        "subnet1StartAddress": {
+            "value": "10.240.84.4"
+        },
+        "subnet2Name": {
+            "value": "snet-vnet-sas-d-internal-001"
+        },
+        "subnet2Prefix": {
+            "value": "10.240.84.64/26"
+        },
+        "subnet2StartAddress": {
+            "value": "10.240.84.68"
+        },
+        "subnet3Name": {
+            "value": "snet-vnet-sas-d-protected-001"
+        },
+        "subnet3Prefix": {
+            "value": "10.240.85.0/24"
+        },
+        "fortiManager": {
+            "value": "no"
+        },
+        "fortiManagerIP": {
+            "value": ""
+        },
+        "fortiManagerSerial": {
+            "value": ""
+        },
+        "fortiGateLicenseBYOLA": {
+            "value": ""
+        },
+        "fortiGateLicenseBYOLB": {
+            "value": ""
+        },
+        "location": {
+            "value": "southeastasia"
+        },
+        "fortinetTags": {
+            "value": {
+                "publisher": "Fortinet",
+                "template": "Active-Active-ELB-ILB",
+                "provider": "6EB3B02F-50E5-4A3E-8CB8-2E12925831AA"
+            }
+        }
+    }
+}

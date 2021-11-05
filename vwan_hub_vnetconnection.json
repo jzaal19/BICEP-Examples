@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections",
+            "apiVersion": "2020-04-01",
+            "name": "vwan-vhub-sas-p-001/vwan-vhub-sas-p-001-to-vnet-sas-d-fortigate-001",
+            "location": "southeastasia",
+            "dependsOn": [],
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "663c2195-676e-4269-8318-f5f7e9585fe9",
+                "routingConfiguration": {
+                    "associatedRouteTable": {
+                        "id": "/subscriptions/6b2706a9-9214-4498-a42c-c19bb6852b59/resourceGroups/rg-global-network-p-001/providers/Microsoft.Network/virtualHubs/vwan-vhub-sas-p-001/hubRouteTables/defaultRouteTable"
+                    },
+                    "propagatedRouteTables": {
+                        "labels": [
+                            "default"
+                        ],
+                        "ids": [
+                            {
+                                "id": "/subscriptions/6b2706a9-9214-4498-a42c-c19bb6852b59/resourceGroups/rg-global-network-p-001/providers/Microsoft.Network/virtualHubs/vwan-vhub-sas-p-001/hubRouteTables/defaultRouteTable"
+                            }
+                        ]
+                    },
+                    "vnetRoutes": {
+                        "staticRoutes": []
+                    }
+                },
+                "remoteVirtualNetwork": {
+                    "id": "/subscriptions/ce141f58-1789-40b2-b96a-249eb83d8f54/resourceGroups/rg-sas-fortigate-0451-d-001/providers/Microsoft.Network/virtualNetworks/vnet-sas-d-fortigate-001"
+                },
+                "allowHubToRemoteVnetTransit": true,
+                "allowRemoteVnetToUseHubVnetGateways": true,
+                "enableInternetSecurity": true
+            }
+        }
+    ]
+}

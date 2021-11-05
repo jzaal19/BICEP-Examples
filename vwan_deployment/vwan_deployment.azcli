@@ -1,0 +1,12 @@
+az login
+
+az account set --subscription "17a430a4-b126-44e3-ac2c-e2da167eb708"
+
+az group create --name rg-weu-security-0451-p-001 --location westeurope
+az keyvault create --name kv-deploy-p --resource-group rg-weu-security-0451-p-001 --location westeurope --enabled-for-template-deployment true
+az keyvault secret set --vault-name kv-deploy-p --name "fortigateDeployAdminPassword" --value "P@ssword01!!"
+
+# Accept the logal terms for the Fortigate Image 
+az vm image terms accept --urn fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:latest
+
+y
