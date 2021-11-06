@@ -9,4 +9,4 @@ az keyvault secret set --vault-name kv-deploy-p --name "fortigateDeployAdminPass
 # Accept the logal terms for the Fortigate Image 
 az vm image terms accept --urn fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:latest
 
-y
+az deployment sub create -f  .\vwan_deployment\vwan_deployment.bicep -p .\vwan_deployment\vwan_deployment.parameters.json -l westeurope -c -o json -n vwan_deployment

@@ -17,6 +17,9 @@ param tags object
 @description('Short code for the Environment to be used in the resource naming. Eg: p for Production')
 param environment string = 'p'
 
+@description('Switch for deploying Fortigate Firewalls')
+param deployFortigates bool
+
 // resources
 resource rg0 'Microsoft.Resources/resourceGroups@2020-06-01' = {
   name: 'rg-global-network-${environment}-001'
@@ -30,7 +33,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2020-06-01' = [for (region, i) i
   tags: tags
 }]
 
-resource rgfw 'Microsoft.Resources/resourceGroups@2020-06-01' = [for (region, i) in vWANRegionDetails: {
+resource rgfw 'Microsoft.Resources/resourceGroups@2020-06-01' = [for (region, i) in vWANRegionDetails: if (deployFortigates) {
   name: 'rg-${region.regionShortName}-firewall-${tags.costcenter}-${environment}-001'
   location: '${region.regionAzureLocation}'
   tags: tags
@@ -51,7 +54,28 @@ resource kv 'Microsoft.KeyVault/vaults@2019-09-01' existing = {
   scope: resourceGroup('17a430a4-b126-44e3-ac2c-e2da167eb708', 'rg-weu-security-0451-p-001' )
 }
 
-module fortigates './resources/fortigate.bicep' = [for (region, i) in vWANRegionDetails:{
+module vwan './resources/vwan.bicep' = {
+  name: 'vwan1'
+  scope: rg0
+  params: {
+    wanname: 'vwan-network-${vWANRegionDetails[0].regionShortName}-${environment}-001'
+    tags: tags
+  }
+}
+
+module vwanhubs './resources/vwan_hub.bicep' = [ for (region,i) in vWANRegionDetails: {
+  name: 'vwanhub${i+1}'
+  scope: rg0
+  params: {
+    vwanid: vwan.outputs.id
+    hubname: 'vwan-vhub-${region.regionShortName}-${environment}-001'
+    location: region.regionAzureLocation
+    hubaddressprefix: region.regionVWANHubAddressSpace
+    tags: tags
+  }
+}]
+
+module fortigates './resources/fortigate.bicep' = [for (region, i) in vWANRegionDetails: if (deployFortigates){
   name: 'fortigate-${region.regionShortName}'
   scope: rgfw[i]
   params: {

@@ -59,6 +59,9 @@
     },
     "environment": {
       "value": "p"
+    },
+    "deployFortigates":{
+      "value": false
     }
   }
 }
